@@ -1,0 +1,40 @@
+﻿@model FinbuckleTest.Models.Account.UserRegistrationModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form class="form" asp-action="Create">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenantId"></label>
+                @Html.DropDownListFor(model => model.TenantId, (IEnumerable<SelectListItem>)ViewBag.TenantId, "Select Tenant", new { @class = "form-control" })
+                <span asp-validation-for="TenantId" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Create User</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
