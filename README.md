@@ -1,4 +1,4 @@
-# finbuckle_test
+# Finbuckle Multitenant Test (Issue resolution)
 Just another test of the awesome Finbuckle
 
 1. Clone repo
